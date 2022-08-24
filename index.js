@@ -12,6 +12,9 @@ connection();
 app.listen(process.env.PORT, () => {
     console.log(`Example app listening on port ${process.env.PORT}`)
 })
+app.get('/.well-known/acme-challenge/-qEnZ8wUElDWna9rDlp1TzCG0vVDjIyIpoEi9BDSvlQ.mx5NYNr2m5VIvtuu_me_4a6qDaFlU58tR98H95KHN4g', async(req,res) => {
+    res.send("-qEnZ8wUElDWna9rDlp1TzCG0vVDjIyIpoEi9BDSvlQ.mx5NYNr2m5VIvtuu_me_4a6qDaFlU58tR98H95KHN4g");
+})
 app.get('/:slug', async(req, res) => {
     try {
         const Link = await LinkShortener.findOne({slug:req.params.slug});
